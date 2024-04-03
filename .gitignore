@@ -1,5 +1,10 @@
 # entry for models folder and all its subfolders
 models/**/*
+mlruns/
+mlruns.db
+mlruns*
+mlartifacts/
+mlartifacts*
 
 # Byte-compiled / optimized / DLL files
 
