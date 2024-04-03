@@ -1,6 +1,5 @@
-# entry for models folder
-models/
-
+# entry for models folder and all its subfolders
+models/**/*
 
 # Byte-compiled / optimized / DLL files
 

@@ -1,0 +1,14 @@
+data:
+  data_path: "data/dataset.csv"
+  test_data_path: "data/test_dataset.csv"
+  test_size: 0.2 # Percentage of the data to be used as the test set
+  random_state: 42 # Seed for random operations to ensure reproducibility
+
+model:
+  model_save_path: "model/trained_model.pkl"
+  model_params:
+    max_iter: 1000
+
+features:
+  numeric: ["x1", "x2", "x4", "x5"]
+  categorical: ["x3", "x6", "x7"]
