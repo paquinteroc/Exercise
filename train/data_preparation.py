@@ -6,5 +6,5 @@ def load_data(path):
 
 
 def preprocess_data(data):
-    # Add your preprocessing steps here
+    """Preprocess the data."""
     return data
