@@ -1,0 +1,20 @@
+# Ignore Python bytecode files
+*.pyc
+__pycache__
+
+# Ignore virtual environment directories
+venv/
+.env/
+
+# Ignore local development files anddocker run scoring directories
+*.log
+*.pot
+*.po
+*.mo
+*.bak
+*.swp
+.DS_Store
+.coverage
+.pytest_cache
+.idea
+.vscode

@@ -1,18 +1,17 @@
-# Use a lightweight Python base image
-FROM python:3.8-slim
+FROM python:3.9-alpine
+RUN apk add --no-cache build-base
+WORKDIR /app
 
-# Install Python dependencies
-COPY requirements.txt /tmp/
-RUN pip install --no-cache-dir -r /tmp/requirements.txt
+COPY requirements-service.txt .
 
-# Copy the application code
-COPY . /app
+RUN pip install --no-cache-dir -r requirements-service.txt
 
-# Set the working directory to the app directory
-WORKDIR /app/app/scoring
+COPY scoring_service/* ./
 
-# Expose the port FastAPI will run on
-EXPOSE 80
+EXPOSE 8080
 
-# Command to run the FastAPI app
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+ARG MODEL_PATH
+ENV MODEL_PATH=$MODEL_PATH
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+

@@ -1,0 +1,1 @@
+docker build --build-arg MODEL_PATH=/models/trained_model.pkl -t scoring .
