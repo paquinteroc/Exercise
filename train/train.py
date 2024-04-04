@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 import mlflow
-from config import load_config
+from train.config import load_config
 
 mlflow.set_tracking_uri("http://localhost:5000")
 
