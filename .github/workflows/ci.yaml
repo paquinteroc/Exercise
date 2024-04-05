@@ -31,7 +31,7 @@ jobs:
       - name: Run pytest for specific subfolders
         run: |
           pytest tests/train
-          pytest tests/scoring_service
+          pytest tests/service
 
       - name: Build image
         if: github.event_name != 'pull_request'
