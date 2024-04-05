@@ -5,5 +5,9 @@ pandas
 numpy
 joblib
 pyyaml
-pytest
 mlflow
+# testing, linting
+pytest
+isort
+black
+flake8

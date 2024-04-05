@@ -1,4 +1,5 @@
 import pytest
+
 from train.config import load_config
 
 

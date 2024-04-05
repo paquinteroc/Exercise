@@ -1,15 +1,11 @@
 import logging
-from fastapi import FastAPI
-from pydantic import BaseModel
-import numpy as np
-import pandas as pd
 import os
-from model_loader import load_model
-import logging
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 from typing import List
 
+import pandas as pd
+from fastapi import FastAPI, HTTPException
+from model_loader import load_model
+from pydantic import BaseModel
 
 app = FastAPI()
 model_path = os.getenv("MODEL_PATH")

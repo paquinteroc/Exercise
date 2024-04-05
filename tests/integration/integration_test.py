@@ -1,6 +1,7 @@
 import os
-import requests
+
 import pandas as pd
+import requests
 
 
 def test_score_endpoint():
