@@ -40,7 +40,7 @@ jobs:
           MODEL_PATH: models/trained_model.pkl
 
       - name: Run Docker container
-        run: docker run -p 8000:8000 scoring
+        run: docker run -d -p 8000:8000 scoring
 
       - name: Wait for application to be ready
         run: |
