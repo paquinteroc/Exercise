@@ -33,19 +33,16 @@ jobs:
           pytest tests/train
 
       - name: Build image
-        if: github.event_name != 'pull_request'
         run: |
-          docker build --build-arg MODEL_PATH=models/trained_model.pkl -t scoring_service .
+          docker build --build-arg MODEL_PATH=models/trained_model.pkl -t scoring .
           docker tag scoring_service:latest scoring_service:${{ github.sha }}
         env:
           MODEL_PATH: models/trained_model.pkl
 
       - name: Run Docker container
-        if: github.event_name != 'pull_request'
         run: docker run -p 8000:8000 scoring
 
       - name: Wait for application to be ready
-        if: github.event_name != 'pull_request'
         run: |
           for i in {1..10}; do
             curl -f http://localhost:8000/score/ && break || echo "Waiting for application to start..."
@@ -53,6 +50,5 @@ jobs:
           done
 
       - name: Run integration tests
-        if: github.event_name != 'pull_request'
         run: |
           pytest tests/integration
