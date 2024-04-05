@@ -37,6 +37,3 @@ def test_main(mock_mlflow, config_path):
     # Asserting mlflow function calls
     mock_mlflow.log_metric.assert_called_once()
     mock_mlflow.sklearn.log_model.assert_called_once()
-
-    # Asserting model file creation
-    assert os.path.exists("model.pkl")

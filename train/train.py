@@ -8,7 +8,8 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 import mlflow
-from train.config import load_config
+from .config import load_config
+from .data_preparation import preprocess_data
 
 mlflow.set_tracking_uri("http://localhost:5000")
 
@@ -25,7 +26,8 @@ def main(config_path):
 
         df = pd.read_csv(config["data"]["data_path"])
         label_column = config["data"].get("label_column", "y")
-        df_label = df.pop(label_column)
+        df_label = preprocess_data(df, label_column)
+
         RANDOM_STATE = config["model"].get("random_state", 1337)
 
         numeric_features = config["features"]["numeric"]
