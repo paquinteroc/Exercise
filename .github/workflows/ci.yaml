@@ -35,7 +35,7 @@ jobs:
       - name: Build image
         run: |
           docker build --build-arg MODEL_PATH=models/trained_model.pkl -t scoring .
-          docker tag scoring_service:latest scoring_service:${{ github.sha }}
+          docker tag scoring:latest scoring:${{ github.sha }}
         env:
           MODEL_PATH: models/trained_model.pkl
 
