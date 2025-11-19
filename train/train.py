@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from .config import load_config
-from .data_preparation import preprocess_data
+from config import load_config
+from data_preparation import preprocess_data
 
 mlflow.set_tracking_uri("http://localhost:5000")
 

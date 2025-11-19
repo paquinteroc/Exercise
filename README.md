@@ -1,4 +1,4 @@
-# Kohls MLE Interview
+# Interview
 
 This repo contains instructions, code and data for a take-home assessment.
 Upon receiving this assessment, you should clone this repo to a local
@@ -27,9 +27,6 @@ We ask that you:
       - The script should, at minimum, accept arguments or
         a configuration file that defines the data location, important model training
         parameters, and the model save location.
-    - Log model metrics to an external tracking file/server/DB.
-      - You can use your own implementation or integrate with an existing
-        library like MLFlow, etc.
     - Save the trained model so that it can be reused later.
 
 2.  Write a `Dockerfile(s)` which builds a container capable of scoring
@@ -53,6 +50,14 @@ We ask that you:
     - Be prepared to discuss integrations with relevant MLOps services on your chosen
       platform (ie: AzureML, VertexAI, Sagemaker, etc).
 
+## Extra points 
+Even though not required it would be awsome if you can write some of the following:
+    - Unit test for some the code you write
+    - A github action to build the docker container
+    - Integration test for a running docker container
+    - Demo of the service running and passing test during the interview
+
+
 It is recommended that you push the resulting work to your own Git project and
 be prepared to provide the link and discuss your work at the interview. The purpose of this
 section is to provide a platform you the candidate to demonstrate familiarity with the technologies
@@ -70,9 +75,8 @@ manner consistent with your `Docker` implementations.
 
 Some key questions we will work through:
 
-- How might you improve the model? Different algorithm?
-- How did you structure the training codebase? Why?
-- How did you handle model metric tracking?
+- How did/would you structure the training codebase? Why?
+- How did/would you handle model metric tracking?
 - How did/would you handle model versioning and updating?
 - How did you handle environment replication/stability?
 - How did/would you handle deployment to multiple environments (`dev`/`test`/`prod`)?
